@@ -4,6 +4,7 @@
 #include <iostream>
 #include <Windows.h>
 #include <string>
+#include "Chapter1.cpp"
 
 using namespace cv;
 using namespace std;
@@ -17,16 +18,12 @@ std::wstring ExePath() {
 	return std::wstring(buffer).substr(0, pos);
 }
 
-
 int main() {
 	/* Summary: Get Current path
 	*/
 	//std::wcout << "Path:" << ExePath() << "\n";
 	
-	string path = "Resources/test.png";
-	Mat img = imread(path);
-	imshow("Image", img);
-
-	waitKey(0);
+	VideoLoad();
+	
 	return 0;
 }

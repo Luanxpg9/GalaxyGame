@@ -1,6 +1,7 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
+#include <opencv2/video.hpp>
 #include <iostream>
 
 using namespace cv;
@@ -10,7 +11,7 @@ using namespace std;
 /// Video
 /// </summary>
 /// <returns></returns>
-int Main() {
+void VideoLoad() {
 
 	string path = "Resources/test_video.mp4";
 	VideoCapture cap(path);
@@ -22,20 +23,19 @@ int Main() {
 
 		waitKey(1);
 	}
-	return 0;
 }
 
 
 /// Images
-/*
-int Main() {
+
+void ImageLoad() {
+	// Summary: Get Current path
+	
+	//std::wcout << "Path:" << ExePath() << "\n";
+
 	string path = "Resources/test.png";
 	Mat img = imread(path);
 	imshow("Image", img);
+
 	waitKey(0);
-
-	return 0;
 }
-*/
-
-
