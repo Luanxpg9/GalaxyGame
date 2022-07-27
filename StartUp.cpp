@@ -1,7 +1,3 @@
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgproc.hpp>
-#include <iostream>
 #include <Windows.h>
 #include <string>
 #include "Chapter1.cpp"
@@ -18,12 +14,12 @@ std::wstring ExePath() {
 	return std::wstring(buffer).substr(0, pos);
 }
 
-int main() {
-	/* Summary: Get Current path
-	*/
+void main() {
+	// Summary: Get Current path
+
 	//std::wcout << "Path:" << ExePath() << "\n";
-	
+
+	ImageLoad();
+
 	VideoLoad();
-	
-	return 0;
 }

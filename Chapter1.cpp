@@ -7,11 +7,26 @@
 using namespace cv;
 using namespace std;
 
+
 /// <summary>
-/// Video
+/// Webcam load image
 /// </summary>
-/// <returns></returns>
-void VideoLoad() {
+inline void WebcamLoad() {
+	VideoCapture cap(0);
+	Mat img;
+
+	while (true) {
+		cap.read(img);
+
+		imshow("WebCam", img);
+		waitKey(1);
+	}
+}
+
+/// <summary>
+/// Video load image
+/// </summary>
+inline void VideoLoad() {
 
 	string path = "Resources/test_video.mp4";
 	VideoCapture cap(path);
@@ -19,16 +34,15 @@ void VideoLoad() {
 
 	while (true) {
 		cap.read(img);
-		imshow("Image", img);
+		cv::imshow("Image", img);
 
-		waitKey(1);
+		waitKey(20);
 	}
 }
 
 
 /// Images
-
-void ImageLoad() {
+inline int ImageLoad() {
 	// Summary: Get Current path
 	
 	//std::wcout << "Path:" << ExePath() << "\n";
@@ -38,4 +52,5 @@ void ImageLoad() {
 	imshow("Image", img);
 
 	waitKey(0);
+	return 0;
 }
